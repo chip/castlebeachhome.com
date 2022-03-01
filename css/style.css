@@ -168,6 +168,7 @@
     }
 }
 
+.owl-carousel .owl-nav,
 .header-carousel .owl-nav {
     position: absolute;
     top: 50%;
@@ -177,6 +178,8 @@
     flex-direction: column;
 }
 
+.owl-carousel .owl-nav .owl-prev,
+.owl-carousel .owl-nav .owl-next,
 .header-carousel .owl-nav .owl-prev,
 .header-carousel .owl-nav .owl-next {
     margin: 7px 0;
@@ -192,6 +195,8 @@
     transition: .5s;
 }
 
+.owl-carousel .owl-nav .owl-prev:hover,
+.owl-carousel .owl-nav .owl-next:hover,
 .header-carousel .owl-nav .owl-prev:hover,
 .header-carousel .owl-nav .owl-next:hover {
     background: var(--dark);
