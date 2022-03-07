@@ -1,7 +1,7 @@
 local domain = 'https://ik.imagekit.io'
 local id = 'xgo8sb3wzhm'
 local path = 'images'
-local transformation = 'tr:w-600'
+local src_transformation = 'tr:w-600'
 local property = 'Gulf Place Residences'
 local alt_prefix = '30-A Florida - '
 local images = {
@@ -84,13 +84,14 @@ local images = {
 
 for _, image in ipairs(images) do
   local srcset_paths = {}
-  local url = table.concat({domain, id, path, image}, '/')
   for _, n in ipairs({360, 720, 1024}) do
+    local transformation = string.format('tr:w-%s', n)
+    local url = table.concat({domain, id, transformation, path, image}, '/')
     local src = string.format("%s %sw", url, n)
     table.insert(srcset_paths, src)
   end
   local srcset = table.concat(srcset_paths, ",\n                ")
-  local src = table.concat({domain, id, transformation, path, image}, '/')
+  local src = table.concat({domain, id, src_transformation, path, image}, '/')
   local alt = alt_prefix .. property .. ' - ' .. image
   local html = string.format([[
     <div class="owl-carousel-item">
