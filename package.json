@@ -1,5 +1,9 @@
 {
+  "scripts": {
+    "build": "esbuild ./lib/bootstrap/bootstrap.bundle.min.js ./lib/easing/easing.min.js ./lib/jquery/jquery-3.4.1.min.js ./lib/lazysizes/lazysizes.min.js ./lib/owlcarousel/owl.carousel.min.js ./lib/waypoints/waypoints.min.js ./lib/wow/wow.min.js --bundle --outdir=dist"
+  },
   "dependencies": {
+    "esbuild": "^0.14.24",
     "live-server": "^1.2.1"
   }
 }
