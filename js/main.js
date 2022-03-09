@@ -1,4 +1,4 @@
-(function ($) {
+export function init($) {
     "use strict";
 
     // Spinner
@@ -39,18 +39,16 @@
         return false;
     });
 
-
-    // Gulf Place Residences carousel
-    $(".owl-carousel").owlCarousel({
-        autoplay: false,
-        smartSpeed: 1500,
-        items: 1,
-        dots: true,
-        loop: true,
-        nav : true,
-        navText : [
-            '<i class="bi bi-chevron-left"></i>',
-            '<i class="bi bi-chevron-right"></i>'
-        ]
-    });
-})(jQuery);
+    const options = {
+      lazyload: true,
+      speed: 2000,
+      nav: false,
+      controlsText: [
+        '<a href="#" class="btn btn-lg btn-primary btn-lg-square"><i class="bi bi-arrow-left"></i></a>',
+        '<a href="#" class="btn btn-lg btn-primary btn-lg-square"><i class="bi bi-arrow-right"></i></a>',
+      ],
+      autoplay: false
+    }
+    tns(Object.assign({}, options, { container: '.gulf-place-slider' }));
+    tns(Object.assign({}, options, { container: '.prominence-slider' }));
+}
